@@ -282,7 +282,7 @@ Our crop yield prediction system directly addresses multiple targets of SDG 2:
 - **Cost reduction**: Fertilizer use decreased by 30% while maintaining high yields
 - **Risk management**: Better weather predictions helped her prepare for drought conditions
 
-![Linear Regression Model](demo_screenshots/linear-regression.png)
+![Linear Regression Model](demo_screenshots/prediction_results_linear_regression.png)
 *Figure 6: Linear Regression model interface showing parameter inputs and prediction results*
 
 **Impact**: Maria's improved productivity not only increased her family's food security but also provided surplus crops for local markets, generating additional income for her community.
@@ -492,33 +492,17 @@ The path to Zero Hunger is challenging, but with the right tools, partnerships, 
 
 ## References
 
-1. United Nations. (2023). *The Sustainable Development Goals Report 2023*. New York: UN Publications.
+1. 📈 World Bank Agriculture Data
+*World Bank Agriculture & Rural Development Data*
 
-2. Food and Agriculture Organization of the United Nations. (2023). *The State of Food Security and Nutrition in the World 2023*. Rome: FAO.
-
-3. World Bank. (2023). *Agriculture and Food Security*. Washington, DC: World Bank Group.
-
-4. International Food Policy Research Institute. (2023). *Global Food Policy Report 2023*. Washington, DC: IFPRI.
-
-5. Intergovernmental Panel on Climate Change. (2023). *Climate Change 2023: Synthesis Report*. Geneva: IPCC.
-
-6. United Nations Environment Programme. (2023). *Global Environment Outlook 2023*. Nairobi: UNEP.
-
-7. World Health Organization. (2023). *Malnutrition: Key Facts*. Geneva: WHO.
-
-8. International Fund for Agricultural Development. (2023). *Rural Development Report 2023*. Rome: IFAD.
-
-9. Global Alliance for Improved Nutrition. (2023). *Global Nutrition Report 2023*. Geneva: GAIN.
-
-10. Consultative Group for International Agricultural Research. (2023). *CGIAR Research Program on Climate Change, Agriculture and Food Security*. Montpellier: CGIAR.
+2. *📊 Kaggle Agricultural Yield Prediction Dataset*– includes environmental, soil, and farming parameters
 
 ---
 
 *This article represents ongoing research and development in the field of agricultural technology and food security. For the latest updates and technical details, please visit our project repository and documentation.*
 
 **Contact Information:**
-- Project Repository: [GitHub Repository Link]
-- Email: [Contact Email]
-- Website: [Project Website]
+- Project Repository: [https://github.com/wn-marie/crop-yield-predictor]
+- Email: [mw270761@gmail.com]
 
 **Keywords for Search:** SDG 2, Zero Hunger, Machine Learning, Crop Yield Prediction, Food Security, Precision Agriculture, Climate-Smart Farming, Sustainable Development, Agricultural Technology, Global Hunger

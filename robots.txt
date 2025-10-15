@@ -1,0 +1,19 @@
+User-agent: *
+Allow: /
+
+# Sitemap
+Sitemap: https://wn-marie.github.io/crop-yield-predictor/sitemap.xml
+
+# Disallow certain paths
+Disallow: /_site/
+Disallow: /_posts/
+Disallow: /_layouts/
+Disallow: /_includes/
+Disallow: /_sass/
+Disallow: /_config.yml
+Disallow: /Gemfile
+Disallow: /Gemfile.lock
+Disallow: /*.py$
+Disallow: /*.csv$
+Disallow: /data/
+Disallow: /__pycache__/

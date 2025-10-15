@@ -5,6 +5,7 @@
 [![Scikit-learn](https://img.shields.io/badge/Scikit--learn-1.3%2B-orange.svg)](https://scikit-learn.org/)
 [![License](https://img.shields.io/badge/License-MIT-green.svg)](LICENSE)
 [![SDG 2](https://img.shields.io/badge/SDG-2%20Zero%20Hunger-yellow.svg)](https://sdgs.un.org/goals/goal2)
+[![Website](https://img.shields.io/badge/Website-Live-brightgreen.svg)](https://wn-marie.github.io/crop-yield-predictor/)
 
 > **A machine learning-powered web application that predicts crop yields to support sustainable agriculture and food security initiatives aligned with UN Sustainable Development Goal 2: Zero Hunger.**
 
@@ -17,6 +18,7 @@
 - [Model Evaluation](#-model-evaluation)
 - [Installation & Usage](#-installation--usage)
 - [Demo Screenshots](#-demo-screenshots)
+- [Project Website](#-project-website)
 - [Ethical Reflection](#-ethical-reflection)
 - [Contributing](#-contributing)
 - [License](#-license)
@@ -490,10 +492,31 @@ SOFTWARE.
 
 ---
 
+## 🌐 Project Website
+
+Visit our interactive project website for a comprehensive overview:
+
+**[🌾 Crop Yield Predictor Website](https://wn-marie.github.io/crop-yield-predictor/)**
+
+The website features:
+- **Interactive Overview**: Visual presentation of project features and impact
+- **Live Demo Screenshots**: Application interface and functionality showcase
+- **SDG 2 Alignment**: Detailed explanation of our contribution to Zero Hunger
+- **Quick Access**: Direct links to repository, documentation, and pitch deck
+- **Responsive Design**: Optimized for desktop and mobile viewing
+
+### Website Features
+- 🎨 **Modern UI/UX**: Professional design with Bootstrap 5 and custom styling
+- 📱 **Mobile Responsive**: Optimized for all device sizes
+- 🔍 **SEO Optimized**: Meta tags and structured data for search engines
+- ⚡ **Fast Loading**: Static HTML for optimal performance
+- 🎯 **Call-to-Actions**: Clear paths to repository and documentation
+
 ## 📞 Contact
 
 - **Project lead**: [Mary Wairimu](mw270761@gmail.com.com)
 - **Project Repository**: [GitHub Repository](https://github.com/wn-marie/crop-yield-predictor)
+- **Project Website**: [Live Demo & Overview](https://wn-marie.github.io/crop-yield-predictor/)
 - **Pitch Deck**: [View Presentation](https://www.canva.com/design/DAG1zz4aDuU/vdA1jU4zZzy9rtQNQ0hp5w/edit?utm_content=DAG1zz4aDuU&utm_campaign=designshare&utm_medium=link2&utm_source=sharebutton)
 
 

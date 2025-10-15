@@ -1,0 +1,519 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Crop Yield Predictor - Supporting SDG 2: Zero Hunger</title>
+    <meta name="description" content="A machine learning-powered web application that predicts crop yields to support sustainable agriculture and food security initiatives aligned with UN Sustainable Development Goal 2: Zero Hunger.">
+    <meta name="keywords" content="crop yield prediction, machine learning, agriculture, food security, SDG 2, zero hunger, precision agriculture, sustainable farming">
+    
+    <!-- Open Graph Meta Tags -->
+    <meta property="og:title" content="Crop Yield Predictor - Supporting SDG 2: Zero Hunger">
+    <meta property="og:description" content="ML-powered web application for sustainable agriculture and food security">
+    <meta property="og:image" content="https://wn-marie.github.io/crop-yield-predictor/demo_screenshots/main_interface.png">
+    <meta property="og:url" content="https://wn-marie.github.io/crop-yield-predictor/">
+    <meta property="og:type" content="website">
+    
+    <!-- Twitter Card Meta Tags -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Crop Yield Predictor - Supporting SDG 2: Zero Hunger">
+    <meta name="twitter:description" content="ML-powered web application for sustainable agriculture and food security">
+    <meta name="twitter:image" content="https://wn-marie.github.io/crop-yield-predictor/demo_screenshots/main_interface.png">
+    
+    <!-- Favicon -->
+    <link rel="icon" type="image/x-icon" href="https://cdn-icons-png.flaticon.com/512/3081/3081980.png">
+    
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <!-- Custom CSS -->
+    <style>
+        :root {
+            --primary-color: #2E8B57;
+            --secondary-color: #228B22;
+            --accent-color: #FFD700;
+            --text-color: #333;
+            --bg-color: #f8f9fa;
+        }
+        
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: var(--text-color);
+        }
+        
+        .hero-section {
+            background: linear-gradient(135deg, var(--primary-color) 0%, var(--secondary-color) 100%);
+            color: white;
+            padding: 100px 0;
+            text-align: center;
+        }
+        
+        .hero-title {
+            font-size: 3.5rem;
+            font-weight: bold;
+            margin-bottom: 1rem;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+        }
+        
+        .hero-subtitle {
+            font-size: 1.3rem;
+            margin-bottom: 2rem;
+            opacity: 0.9;
+        }
+        
+        .feature-card {
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            border: none;
+            border-radius: 15px;
+            margin-bottom: 2rem;
+        }
+        
+        .feature-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+        }
+        
+        .feature-icon {
+            font-size: 3rem;
+            color: var(--primary-color);
+            margin-bottom: 1rem;
+        }
+        
+        .stats-section {
+            background-color: var(--bg-color);
+            padding: 80px 0;
+        }
+        
+        .stat-item {
+            text-align: center;
+            padding: 2rem;
+        }
+        
+        .stat-number {
+            font-size: 3rem;
+            font-weight: bold;
+            color: var(--primary-color);
+        }
+        
+        .stat-label {
+            font-size: 1.1rem;
+            color: var(--text-color);
+            margin-top: 0.5rem;
+        }
+        
+        .cta-section {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 80px 0;
+            text-align: center;
+        }
+        
+        .btn-custom {
+            background-color: var(--accent-color);
+            color: var(--text-color);
+            border: none;
+            padding: 15px 30px;
+            font-size: 1.1rem;
+            font-weight: bold;
+            border-radius: 50px;
+            transition: all 0.3s ease;
+            margin: 10px;
+        }
+        
+        .btn-custom:hover {
+            background-color: #FFA500;
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+        }
+        
+        .screenshot-section {
+            padding: 80px 0;
+            background-color: white;
+        }
+        
+        .screenshot-card {
+            border-radius: 15px;
+            overflow: hidden;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+            margin-bottom: 2rem;
+        }
+        
+        .footer {
+            background-color: var(--text-color);
+            color: white;
+            padding: 50px 0 30px;
+        }
+        
+        .footer a {
+            color: var(--accent-color);
+            text-decoration: none;
+        }
+        
+        .footer a:hover {
+            color: #FFA500;
+        }
+        
+        .badge-custom {
+            background-color: var(--primary-color);
+            color: white;
+            padding: 8px 16px;
+            border-radius: 20px;
+            font-size: 0.9rem;
+            margin: 5px;
+            display: inline-block;
+        }
+        
+        .section-title {
+            font-size: 2.5rem;
+            font-weight: bold;
+            text-align: center;
+            margin-bottom: 3rem;
+            color: var(--primary-color);
+        }
+        
+        .sdg-badge {
+            background-color: #FFD700;
+            color: #000;
+            padding: 10px 20px;
+            border-radius: 25px;
+            font-weight: bold;
+            display: inline-block;
+            margin-bottom: 2rem;
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
+        <div class="container">
+            <a class="navbar-brand" href="#">
+                <i class="fas fa-seedling"></i> Crop Yield Predictor
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="#features">Features</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#demo">Demo</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#impact">Impact</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#get-started">Get Started</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero-section">
+        <div class="container">
+            <div class="sdg-badge">
+                <i class="fas fa-globe"></i> Supporting UN SDG 2: Zero Hunger
+            </div>
+            <h1 class="hero-title">🌾 Crop Yield Predictor</h1>
+            <p class="hero-subtitle">Machine Learning-Powered Web Application for Sustainable Agriculture and Food Security</p>
+            <div class="mt-4">
+                <a href="#get-started" class="btn btn-custom btn-lg">
+                    <i class="fas fa-rocket"></i> Get Started
+                </a>
+                <a href="https://github.com/wn-marie/crop-yield-predictor" class="btn btn-outline-light btn-lg">
+                    <i class="fab fa-github"></i> View on GitHub
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Features Section -->
+    <section id="features" class="py-5">
+        <div class="container">
+            <h2 class="section-title">Key Features</h2>
+            <div class="row">
+                <div class="col-lg-4 col-md-6">
+                    <div class="card feature-card h-100 text-center p-4">
+                        <div class="feature-icon">
+                            <i class="fas fa-brain"></i>
+                        </div>
+                        <h4>Real-time Predictions</h4>
+                        <p>Interactive web interface with live parameter updates using advanced machine learning algorithms.</p>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-6">
+                    <div class="card feature-card h-100 text-center p-4">
+                        <div class="feature-icon">
+                            <i class="fas fa-leaf"></i>
+                        </div>
+                        <h4>Multi-factor Analysis</h4>
+                        <p>Considers weather, soil, nutrients, and farming practices for comprehensive yield prediction.</p>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-6">
+                    <div class="card feature-card h-100 text-center p-4">
+                        <div class="feature-icon">
+                            <i class="fas fa-chart-line"></i>
+                        </div>
+                        <h4>Visual Analytics</h4>
+                        <p>Comprehensive charts, gauges, and feature importance analysis for data-driven insights.</p>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-6">
+                    <div class="card feature-card h-100 text-center p-4">
+                        <div class="feature-icon">
+                            <i class="fas fa-cogs"></i>
+                        </div>
+                        <h4>Dual Model Support</h4>
+                        <p>Random Forest and Linear Regression algorithms for robust and interpretable predictions.</p>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-6">
+                    <div class="card feature-card h-100 text-center p-4">
+                        <div class="feature-icon">
+                            <i class="fas fa-lightbulb"></i>
+                        </div>
+                        <h4>Actionable Insights</h4>
+                        <p>Personalized recommendations based on predicted yields and environmental conditions.</p>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-6">
+                    <div class="card feature-card h-100 text-center p-4">
+                        <div class="feature-icon">
+                            <i class="fas fa-globe-americas"></i>
+                        </div>
+                        <h4>Global Applicability</h4>
+                        <p>Designed for diverse agricultural contexts and regions worldwide.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Statistics Section -->
+    <section class="stats-section">
+        <div class="container">
+            <h2 class="section-title">Project Impact</h2>
+            <div class="row">
+                <div class="col-lg-3 col-md-6">
+                    <div class="stat-item">
+                        <div class="stat-number">10,000+</div>
+                        <div class="stat-label">Data Samples</div>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-6">
+                    <div class="stat-item">
+                        <div class="stat-number">53+</div>
+                        <div class="stat-label">Features Analyzed</div>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-6">
+                    <div class="stat-item">
+                        <div class="stat-number">2</div>
+                        <div class="stat-label">ML Models</div>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-6">
+                    <div class="stat-item">
+                        <div class="stat-number">SDG 2</div>
+                        <div class="stat-label">Zero Hunger</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Demo Screenshots Section -->
+    <section id="demo" class="screenshot-section">
+        <div class="container">
+            <h2 class="section-title">Application Demo</h2>
+            <div class="row">
+                <div class="col-lg-6">
+                    <div class="screenshot-card">
+                        <img src="demo_screenshots/main_interface.png" class="img-fluid" alt="Main Interface">
+                        <div class="p-3">
+                            <h5>Interactive Main Interface</h5>
+                            <p>Real-time parameter adjustment and prediction display with user-friendly controls.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-6">
+                    <div class="screenshot-card">
+                        <img src="demo_screenshots/prediction_results_random_forest.png" class="img-fluid" alt="Prediction Results">
+                        <div class="p-3">
+                            <h5>Prediction Results</h5>
+                            <p>Comprehensive yield predictions with status indicators and confidence intervals.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-6">
+                    <div class="screenshot-card">
+                        <img src="demo_screenshots/visual_analytics_random_forest.png" class="img-fluid" alt="Visual Analytics">
+                        <div class="p-3">
+                            <h5>Visual Analytics</h5>
+                            <p>Interactive charts, gauges, and feature importance analysis for data insights.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-6">
+                    <div class="screenshot-card">
+                        <img src="demo_screenshots/model_comparison.png" class="img-fluid" alt="Model Comparison">
+                        <div class="p-3">
+                            <h5>Model Comparison</h5>
+                            <p>Side-by-side comparison of Random Forest and Linear Regression performance metrics.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Impact Section -->
+    <section id="impact" class="py-5 bg-light">
+        <div class="container">
+            <h2 class="section-title">Supporting SDG 2: Zero Hunger</h2>
+            <div class="row">
+                <div class="col-lg-4">
+                    <div class="text-center mb-4">
+                        <i class="fas fa-chart-line fa-3x text-primary mb-3"></i>
+                        <h4>Enhanced Productivity</h4>
+                        <p>Helping farmers optimize crop yields through data-driven insights and recommendations.</p>
+                    </div>
+                </div>
+                <div class="col-lg-4">
+                    <div class="text-center mb-4">
+                        <i class="fas fa-recycle fa-3x text-primary mb-3"></i>
+                        <h4>Reduced Food Waste</h4>
+                        <p>Better yield predictions enable improved harvest planning and storage management.</p>
+                    </div>
+                </div>
+                <div class="col-lg-4">
+                    <div class="text-center mb-4">
+                        <i class="fas fa-users fa-3x text-primary mb-3"></i>
+                        <h4>Smallholder Support</h4>
+                        <p>Accessible technology for resource-constrained agricultural communities worldwide.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Get Started Section -->
+    <section id="get-started" class="cta-section">
+        <div class="container">
+            <h2 class="mb-4">Ready to Get Started?</h2>
+            <p class="lead mb-4">Join the fight against global hunger with data-driven agriculture</p>
+            <div class="mb-4">
+                <a href="https://github.com/wn-marie/crop-yield-predictor" class="btn btn-custom btn-lg">
+                    <i class="fab fa-github"></i> View Repository
+                </a>
+                <a href="https://www.canva.com/design/DAG1zz4aDuU/vdA1jU4zZzy9rtQNQ0hp5w/edit" class="btn btn-outline-light btn-lg">
+                    <i class="fas fa-presentation"></i> View Pitch Deck
+                </a>
+            </div>
+            <div class="mt-4">
+                <span class="badge-custom">Python 3.8+</span>
+                <span class="badge-custom">Streamlit</span>
+                <span class="badge-custom">Scikit-learn</span>
+                <span class="badge-custom">Machine Learning</span>
+                <span class="badge-custom">Open Source</span>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-4">
+                    <h5><i class="fas fa-seedling"></i> Crop Yield Predictor</h5>
+                    <p>Supporting Global Food Security Through Data Science</p>
+                    <p>Making agriculture more productive, sustainable, and accessible for everyone</p>
+                </div>
+                <div class="col-lg-4">
+                    <h5>Quick Links</h5>
+                    <ul class="list-unstyled">
+                        <li><a href="https://github.com/wn-marie/crop-yield-predictor">GitHub Repository</a></li>
+                        <li><a href="https://www.canva.com/design/DAG1zz4aDuU/vdA1jU4zZzy9rtQNQ0hp5w/edit">Pitch Deck</a></li>
+                        <li><a href="https://sdgs.un.org/goals/goal2">UN SDG 2</a></li>
+                    </ul>
+                </div>
+                <div class="col-lg-4">
+                    <h5>Contact</h5>
+                    <p><i class="fas fa-envelope"></i> <a href="mailto:mw270761@gmail.com">mw270761@gmail.com</a></p>
+                    <p><i class="fab fa-github"></i> <a href="https://github.com/wn-marie">@wn-marie</a></p>
+                    <div class="mt-3">
+                        <a href="https://github.com/wn-marie" class="btn btn-outline-light btn-sm me-2">
+                            <i class="fab fa-github"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+            <hr class="my-4">
+            <div class="row">
+                <div class="col-md-6">
+                    <p>&copy; 2024 Crop Yield Predictor. All rights reserved.</p>
+                </div>
+                <div class="col-md-6 text-end">
+                    <p>Licensed under <a href="https://github.com/wn-marie/crop-yield-predictor/blob/main/LICENSE">MIT License</a></p>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    
+    <!-- Custom JS -->
+    <script>
+        // Smooth scrolling for navigation links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+            });
+        });
+
+        // Add scroll effect to navbar
+        window.addEventListener('scroll', function() {
+            const navbar = document.querySelector('.navbar');
+            if (window.scrollY > 50) {
+                navbar.classList.add('navbar-scrolled');
+            } else {
+                navbar.classList.remove('navbar-scrolled');
+            }
+        });
+
+        // Add animation to stats when they come into view
+        const observerOptions = {
+            threshold: 0.5,
+            rootMargin: '0px 0px -50px 0px'
+        };
+
+        const observer = new IntersectionObserver(function(entries) {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('animate-in');
+                }
+            });
+        }, observerOptions);
+
+        document.querySelectorAll('.stat-number').forEach(el => {
+            observer.observe(el);
+        });
+    </script>
+</body>
+</html>

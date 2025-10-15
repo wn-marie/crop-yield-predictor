@@ -1,0 +1,110 @@
+# GitHub Pages Configuration for Crop Yield Predictor
+# This file configures GitHub Pages settings for the project website
+
+# Site settings
+title: "Crop Yield Predictor"
+description: "A machine learning-powered web application that predicts crop yields to support sustainable agriculture and food security initiatives aligned with UN Sustainable Development Goal 2: Zero Hunger."
+url: "https://wn-marie.github.io"
+baseurl: "/crop-yield-predictor"
+repository: "wn-marie/crop-yield-predictor"
+
+# Build settings
+markdown: kramdown
+highlighter: rouge
+theme: minima
+
+# Plugins
+plugins:
+  - jekyll-feed
+  - jekyll-sitemap
+  - jekyll-seo-tag
+
+# SEO and social media
+author: "Mary Wairimu"
+email: "mw270761@gmail.com"
+twitter:
+  username: "wn-marie"
+github:
+  username: "wn-marie"
+
+# Navigation
+navigation:
+  - title: "Home"
+    url: "/"
+  - title: "Features"
+    url: "/#features"
+  - title: "Demo"
+    url: "/#demo"
+  - title: "Impact"
+    url: "/#impact"
+  - title: "Get Started"
+    url: "/#get-started"
+  - title: "GitHub"
+    url: "https://github.com/wn-marie/crop-yield-predictor"
+    external: true
+
+# Collections
+collections:
+  docs:
+    output: true
+    permalink: /:collection/:name/
+
+# Defaults
+defaults:
+  - scope:
+      path: ""
+      type: "pages"
+    values:
+      layout: "default"
+  - scope:
+      path: ""
+      type: "posts"
+    values:
+      layout: "post"
+
+# Exclude from processing
+exclude:
+  - Gemfile
+  - Gemfile.lock
+  - node_modules
+  - vendor/bundle/
+  - vendor/cache/
+  - vendor/gems/
+  - vendor/ruby/
+  - README.md
+  - LICENSE
+  - requirements.txt
+  - requirements-dev.txt
+  - "*.py"
+  - "*.csv"
+  - "*.md"
+  - "*.txt"
+  - "*.png"
+  - "*.jpg"
+  - "*.jpeg"
+  - "*.gif"
+  - "*.svg"
+  - data/
+  - demo_screenshots/
+  - __pycache__/
+  - .gitignore
+
+# Include additional files
+include:
+  - demo_screenshots/
+  - _redirects
+
+# Sass settings
+sass:
+  style: compressed
+
+# Kramdown settings
+kramdown:
+  input: GFM
+  syntax_highlighter: rouge
+
+# Exclude from sitemap
+sitemap:
+  exclude:
+    - /404.html
+    - /robots.txt
